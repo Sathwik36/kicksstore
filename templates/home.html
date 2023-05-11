@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HOME | KICKS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style media="screen">
+        body {
+            margin: 0;
+            background: #EEE;
+            user-select: none;
+            font-family: sans-serif;
+        }
+
+
+        #slider {
+            position: relative;
+            width: 50%;
+            height: 32vw;
+            margin: 5px auto;
+            font-family: 'Helvetica Neue', sans-serif;
+            perspective: 1400px;
+            transform-style: preserve-3d;
+        }
+
+        input[type=radio] {
+            position: relative;
+            top: 108%;
+            left: 50%;
+            width: 18px;
+            height: 18px;
+            margin: 0 15px 0 0;
+            opacity: 0.4;
+            transform: translateX(-83px);
+            cursor: pointer;
+        }
+
+
+        input[type=radio]:nth-child(5) {
+            margin-right: 0px;
+        }
+
+        input[type=radio]:checked {
+            opacity: 1;
+        }
+
+
+
+
+        #slider label,
+        #slider label img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            color: white;
+            font-size: 70px;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 400ms ease;
+        }
+
+
+
+        /* Slider Functionality */
+
+        /* Active Slide */
+        #s1:checked~#slide1,
+        #s2:checked~#slide2,
+        #s3:checked~#slide3,
+        #s4:checked~#slide4,
+        #s5:checked~#slide5 {
+            box-shadow: 0 13px 26px rgba(0, 0, 0, 0.3), 0 12px 6px rgba(0, 0, 0, 0.2);
+            transform: translate3d(0%, 0, 0px);
+        }
+
+        /* Next Slide */
+        #s1:checked~#slide2,
+        #s2:checked~#slide3,
+        #s3:checked~#slide4,
+        #s4:checked~#slide5,
+        #s5:checked~#slide1 {
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.2);
+            transform: translate3d(20%, 0, -100px);
+        }
+
+
+        /* Next to Next Slide */
+        #s1:checked~#slide3,
+        #s2:checked~#slide4,
+        #s3:checked~#slide5,
+        #s4:checked~#slide1,
+        #s5:checked~#slide2 {
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+            transform: translate3d(40%, 0, -250px);
+        }
+
+        /* Previous to Previous Slide */
+        #s1:checked~#slide4,
+        #s2:checked~#slide5,
+        #s3:checked~#slide1,
+        #s4:checked~#slide2,
+        #s5:checked~#slide3 {
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+            transform: translate3d(-40%, 0, -250px);
+        }
+
+        /* Previous Slide */
+        #s1:checked~#slide5,
+        #s2:checked~#slide1,
+        #s3:checked~#slide2,
+        #s4:checked~#slide3,
+        #s5:checked~#slide4 {
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.2);
+            transform: translate3d(-20%, 0, -100px);
+        }
+    </style>
+</head>
+
+<body style="width: 100%; height: 100%; background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(43,115,200,1) 100%);">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg " style=" backdrop-filter: blur(3px);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/static/kickshome.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top"
+                    style="border: 3px solid grey; border-radius: 20px;">
+
+            </a>
+            <a class="navbar-brand" href="#">KICKS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Jordans</a></li>
+                            <li><a class="dropdown-item" href="#">Dunks</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Off-Whites</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/deals">Deals</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <span class="badge rounded-pill text-bg-danger">New</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/new">What's new</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/feedback">Feedback</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- carousel -->
+    <section id="slider">
+        <input type="radio" name="slider" id="s1" checked>
+        <input type="radio" name="slider" id="s2">
+        <input type="radio" name="slider" id="s3">
+        <input type="radio" name="slider" id="s4">
+        <input type="radio" name="slider" id="s5">
+
+        <label for="s1" id="slide1"><img src="/static/c1.jpg" alt=""></label>
+        <label for="s2" id="slide2"><img src="/static/kickshome.jpg" alt=""></label>
+        <label for="s3" id="slide3"><img src="/static/d1.jpg" alt=""></label>
+        <label for="s4" id="slide4"><img src="/static/d2.webp" alt=""></label>
+        <label for="s5" id="slide5"><img src="/static/d3.jpg" alt=""></label>
+
+    </section>
+    <!-- cards -->
+    <div class="container-fluid"
+        style="display: flex; flex-direction: row; justify-content: space-evenly; margin-top: 10px;">
+        <div class="card" style="width: 18rem;">
+            <img src="/static/item1.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Jordan 1 Retro High 'Pine Green'</h5>
+                <p class="card-text">Featuring a round toe, a lace-up front fastening, a logo patch at the tongue, a
+                    branded insole, a padded ankle, a panelled colour block design, a signature Nike swoosh and a rubber
+                    sole.</p>
+                <a href="/buy" class="btn btn-primary">Buy Product</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="/static/item2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Air Jordan 3 Retro 'UNC'</h5>
+                <p class="card-text">Featuring a round toe, a lace-up front fastening, a logo patch at the tongue, a
+                    branded insole, a padded ankle, a panelled colour block design, a signature Nike swoosh and a rubber
+                    sole.</p>
+                <a href="/buy" class="btn btn-primary">Buy Product</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="/static/item3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Jordan 3 'Black Cement'</h5>
+                <p class="card-text">Featuring a round toe, a lace-up front fastening, a logo patch at the tongue, a
+                    branded insole, a padded ankle, a panelled colour block design, a signature Nike swoosh and a rubber
+                    sole.</p>
+                <a href="/buy" class="btn btn-primary">Buy Product</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

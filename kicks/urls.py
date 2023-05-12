@@ -31,6 +31,7 @@ urlpatterns = [
     path('new',include('kicksapp.urls')),
     path('feedback',include('kicksapp.urls')),
     path('submit',include('kicksapp.urls')),
-    path('buy',include('kicksapp.urls'))
+    path('buy',include('kicksapp.urls')),
+    path('mail',include('kicksapp.urls'))
 
 ]

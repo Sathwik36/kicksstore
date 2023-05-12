@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import authenticate
 from kicksapp.models import feedback1
+from django.core.mail import EmailMessage
+from django.conf import settings
 # Create your views here.
 def login(request):
     return render(request,'login.html')
@@ -60,3 +62,16 @@ def submit(request):
 
 def buy(request):
     return render(request,'delivery.html')
+
+def mail(request):
+    email=EmailMessage(
+        'OTP for KICKS Order Confirmation',
+        'Your OTP is : 1234',
+        settings.EMAIL_HOST_USER,
+        ['sathwik3636@gmail.com'],
+        )
+    
+    email.fail_silently=False
+    email.send()
+
+    return HttpResponse("Mail sent")

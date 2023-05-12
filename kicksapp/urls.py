@@ -10,5 +10,6 @@ urlpatterns = [
     path('new',views.new,name="new"),
     path('feedback',views.feedback,name="feedback"),
     path('submit',views.submit,name="submit"),
-    path('buy',views.buy,name="buy")
+    path('buy',views.buy,name="buy"),
+    path('mail',views.mail,name="mail")
 ]

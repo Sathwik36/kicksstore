@@ -122,6 +122,55 @@
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.2);
             transform: translate3d(-20%, 0, -100px);
         }
+
+        div.gallery {
+            border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        div.gallery:hover {
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: 250px;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .responsive {
+            margin-top: 15px;
+            padding: 0 6px;
+            float: left;
+            width: 24.99999%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .responsive {
+                width: 49.99999%;
+                margin: 6px 0;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .responsive {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -191,23 +240,21 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(43,115,200,1) 1
         <input type="radio" name="slider" id="s4">
         <input type="radio" name="slider" id="s5">
 
-        <label for="s1" id="slide1"><img src="/static/c1.jpg" alt=""></label>
+        <label for="s1" id="slide1"><img src="/static/d1.jpg" alt=""></label>
         <label for="s2" id="slide2"><img src="/static/kickshome.jpg" alt=""></label>
-        <label for="s3" id="slide3"><img src="/static/d1.jpg" alt=""></label>
+        <label for="s3" id="slide3"><img src="/static/c1.jpg" alt=""></label>
         <label for="s4" id="slide4"><img src="/static/d2.webp" alt=""></label>
         <label for="s5" id="slide5"><img src="/static/d3.jpg" alt=""></label>
 
     </section>
     <!-- cards -->
     <div class="container-fluid"
-        style="display: flex; flex-direction: row; justify-content: space-evenly; margin-top: 10px;">
+        style="display: flex; flex-direction: row; justify-content: space-evenly; margin-top: 10px; align-items: center;">
         <div class="card" style="width: 18rem;">
             <img src="/static/item1.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Jordan 1 Retro High 'Pine Green'</h5>
-                <p class="card-text">Featuring a round toe, a lace-up front fastening, a logo patch at the tongue, a
-                    branded insole, a padded ankle, a panelled colour block design, a signature Nike swoosh and a rubber
-                    sole.</p>
+                <h3 class="mb-2">Price: 7200.00 INR*</h3>
                 <a href="/buy" class="btn btn-primary">Buy Product</a>
             </div>
         </div>
@@ -215,9 +262,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(43,115,200,1) 1
             <img src="/static/item2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Air Jordan 3 Retro 'UNC'</h5>
-                <p class="card-text">Featuring a round toe, a lace-up front fastening, a logo patch at the tongue, a
-                    branded insole, a padded ankle, a panelled colour block design, a signature Nike swoosh and a rubber
-                    sole.</p>
+                <h3 class="mb-2">Price: 36,999.00 INR*</h3>
                 <a href="/buy" class="btn btn-primary">Buy Product</a>
             </div>
         </div>
@@ -225,9 +270,47 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(43,115,200,1) 1
             <img src="/static/item3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Jordan 3 'Black Cement'</h5>
-                <p class="card-text">Featuring a round toe, a lace-up front fastening, a logo patch at the tongue, a
-                    branded insole, a padded ankle, a panelled colour block design, a signature Nike swoosh and a rubber
-                    sole.</p>
+                <h3 class="mb-2">Price: 24,999.00 INR*</h3>
+                <a href="/buy" class="btn btn-primary">Buy Product</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="responsive">
+            <div class="gallery">
+
+                <img src="/static/h1.jpg" alt="..." width="300" height="250">
+
+                <div class="desc"> <b>MRP: ₹ 6,000.00</b> </div>
+                <a href="/buy" class="btn btn-primary">Buy Product</a>
+            </div>
+
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+
+                <img src="/static/h2.jpg" alt="..." width="300" height="250">
+
+                <div class="desc"><b>MRP: ₹ 7,999.00</b></div>
+                <a href="/buy" class="btn btn-primary">Buy Product</a>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+
+                <img src="/static/h3.jpg" alt="..." width="300" height="250">
+
+                <div class="desc"><b>MRP: ₹ 14,999.00</b></div>
+                <a href="/buy" class="btn btn-primary">Buy Product</a>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+
+                <img src="/static/h4.jpg" alt="..." width="300" height="250">
+
+                <div class="desc"><b>₹ 9,999.00</b></div>
                 <a href="/buy" class="btn btn-primary">Buy Product</a>
             </div>
         </div>

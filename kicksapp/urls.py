@@ -11,5 +11,6 @@ urlpatterns = [
     path('feedback',views.feedback,name="feedback"),
     path('submit',views.submit,name="submit"),
     path('buy',views.buy,name="buy"),
-    path('mail',views.mail,name="mail")
+    path('mail',views.mail,name="mail"),
+    path('otpverify',views.otpverify,name="otpverify")
 ]

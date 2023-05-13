@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate
 from kicksapp.models import feedback1
 from django.core.mail import EmailMessage
 from django.conf import settings
+import random
 # Create your views here.
 def login(request):
     return render(request,'login.html')
@@ -14,7 +15,8 @@ def verify(request):
         user = authenticate(username=username, password=passs)
         if user is not None:
              # A backend authenticated the credentials
-            return render(request,'home.html')
+            # return render(request,'home.html')
+            return redirect("/home")
         else:
             # No backend authenticated the credentials
             return render(request,'login.html')
@@ -61,17 +63,27 @@ def submit(request):
     return render(request,'feedback.html')
 
 def buy(request):
-    return render(request,'delivery.html')
+    context={
+        "c":0
+    }
+    return render(request,'delivery.html',context)
 
 def mail(request):
+    otp=random.randint(0000,9999)
+    temp='Your OTP is : '+str(otp)
     email=EmailMessage(
         'OTP for KICKS Order Confirmation',
-        'Your OTP is : 1234',
+        temp ,
         settings.EMAIL_HOST_USER,
         ['sathwik3636@gmail.com'],
         )
     
     email.fail_silently=False
     email.send()
+    context={
+        "c":1
+    }
+    return render(request,'delivery.html',context)
 
-    return HttpResponse("Mail sent")
+def otpverify(request):
+    return HttpResponse("You entered your Otp")

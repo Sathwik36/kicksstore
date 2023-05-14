@@ -69,13 +69,15 @@ def buy(request):
     return render(request,'delivery.html',context)
 
 def mail(request):
+    rname=request.POST.get('dname')
+    sendermail=request.POST.get('demail')
     otp=random.randint(0000,9999)
-    temp='Your OTP is : '+str(otp)
+    temp='Hello '+rname+'\nYour OTP is : '+str(otp)+'\nDO NOT share with any one'
     email=EmailMessage(
         'OTP for KICKS Order Confirmation',
         temp ,
         settings.EMAIL_HOST_USER,
-        ['sathwik3636@gmail.com'],
+        [sendermail],
         )
     
     email.fail_silently=False

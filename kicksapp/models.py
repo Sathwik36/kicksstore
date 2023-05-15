@@ -16,3 +16,10 @@ class feedback1(models.Model):
     def __str__(self):
         return self.name
     
+class mailm(models.Model):
+    email=models.EmailField(max_length=54)
+    otp=models.IntegerField()
+
+    def __str__(self) :
+        return self.email
+    

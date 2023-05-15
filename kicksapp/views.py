@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import authenticate
-from kicksapp.models import feedback1
+from kicksapp.models import feedback1,mailm
 from django.core.mail import EmailMessage
 from django.conf import settings
 import random
@@ -82,10 +82,27 @@ def mail(request):
     
     email.fail_silently=False
     email.send()
+    
+    if request.method=="POST":
+        tempobj=mailm()
+        tempobj.email=sendermail
+        tempobj.otp=otp
+        tempobj.save()
+
+
     context={
         "c":1
     }
     return render(request,'delivery.html',context)
 
 def otpverify(request):
-    return HttpResponse("You entered your Otp")
+    if request.method=="POST":
+        otpval=request.POST.get('otpval')
+        query=mailm.objects.all()[0]
+
+        if str(otpval)==str(query.otp):
+            query.delete()
+            return HttpResponse("You entered correct otp")
+        else:
+            query.delete()
+            return HttpResponse("You entered wrong Otp")

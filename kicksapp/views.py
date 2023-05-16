@@ -87,6 +87,7 @@ def mail(request):
         tempobj=mailm()
         tempobj.email=sendermail
         tempobj.otp=otp
+        tempobj.addr=request.POST.get('daddress')
         tempobj.save()
 
 
@@ -99,10 +100,12 @@ def otpverify(request):
     if request.method=="POST":
         otpval=request.POST.get('otpval')
         query=mailm.objects.all()[0]
-
+        context={
+            "address":query.addr
+        }
         if str(otpval)==str(query.otp):
             query.delete()
-            return HttpResponse("You entered correct otp")
+            return render(request,'delivery.html',context)
         else:
             query.delete()
-            return HttpResponse("You entered wrong Otp")
+            return HttpResponse("You entered wrong Otp    Please go back to home  ")

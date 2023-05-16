@@ -24,16 +24,15 @@
 </head>
 
 <body style="background-image: url(/static/kicksbg.jpg); background-repeat: no-repeat; background-size: cover;">
-  <div class="container" style="background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">
+  <div class="container" style="backdrop-filter: blur(8px); border: 3px solid black;border-radius: 10px;">
     <h2 style="background: rgb(255,81,47);
     background: linear-gradient(90deg, rgba(255,81,47,1) 0%, rgba(212,84,84,1) 35%, rgba(221,36,118,1) 100%);">WELCOME
       to KICKS </h2>
     <form action="/verify" method="POST">
       {% csrf_token %}
-      <label for="name" style="color: yellowgreen;"><b>Enter your username:</b></label><br>
+      <label for="name" style="color: orangered;"><b> <i> Enter your username:</i></b></label><br>
       <input type="text" name="username" class="form-control" id=""><br>
-      <label for="passs" style="color: yellowgreen;"><b>Enter your password:</b></label><br>
+      <label for="passs" style="color: orangered;"><b><i>Enter your password:</i></b></label><br>
       <input type="password" name="passs" class="form-control" id=""><br>
       <input type="submit" class="btn btn-primary" value="Submit">
     </form>

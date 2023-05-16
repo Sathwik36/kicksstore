@@ -19,6 +19,7 @@ class feedback1(models.Model):
 class mailm(models.Model):
     email=models.EmailField(max_length=54)
     otp=models.IntegerField()
+    addr=models.TextField()
 
     def __str__(self) :
         return self.email

@@ -160,8 +160,77 @@
             align-items: center;
         }
 
+
+        .card2 {
+            background-color: white;
+            width: 90%;
+            margin: 10px auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            border: 3px solid transparent;
+            border-radius: 10px;
+
+        }
+
+        .card2:hover {
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .forimg {
+            width: 30%;
+            height: 250px;
+            margin-right: 15px;
+
+
+        }
+
+        .forimg img {
+            width: 100%;
+        }
+
+        .ford {
+            width: 68%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .ford a {
+            width: 180px;
+        }
+
+
+        @media only screen and (max-width: 500px) {
+            .card2 {
+                flex-direction: column;
+            }
+
+            .forimg {
+
+                width: 100%;
+            }
+
+            .ford {
+                width: 100%;
+            }
+
+            .forimg img {
+                width: 100%;
+            }
+
+            .ford a {
+                width: 96%;
+            }
+        }
+
         @media only screen and (max-width: 700px) {
             .responsive {
+                width: 49.99999%;
+                margin: 6px 0;
+            }
+            .card {
                 width: 49.99999%;
                 margin: 6px 0;
             }
@@ -171,6 +240,15 @@
             .responsive {
                 width: 100%;
             }
+
+            .card {
+                width: 100%;
+            }
+            #slider {
+                width: 64%;
+                height: 40vw;
+            }
+
         }
     </style>
 </head>
@@ -248,9 +326,9 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(43,115,200,1) 1
         <label for="s5" id="slide5"><img src="/static/d3.jpg" alt=""></label>
 
     </section>
-    <!-- cards -->
+    <!-- cards 1 -->
     <div class="container-fluid"
-        style="display: flex; flex-direction: row; justify-content: space-evenly; margin-top: 10px; align-items: center;">
+        style="display: flex; flex-direction: row; justify-content: space-evenly; margin-top: 10px; align-items: center; flex-wrap: wrap;">
         <div class="card" style="width: 18rem;">
             <img src="/static/item1.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -276,7 +354,46 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(43,115,200,1) 1
             </div>
         </div>
     </div>
+    <!-- cards 2 -->
+    <div class="card2">
+        <div class="forimg">
+            <img src="/static/ch1.jpg" alt="" height="250px">
+        </div>
+        <div class="ford">
+            <p><b>Nike Air Force 1 Low</b></p>
+            <p>Designed by Bruce Kilgore and introduced in 1982, the Air Force 1 was the first-ever basketball shoe to
+                feature Nike Air technology. </p>
+            <p><b>MRP: ₹ 9,699.00</b></p>
+            <a href="/buy" class="btn btn-primary">Buy Product</a>
+        </div>
+    </div>
+    <div class="card2">
+        <div class="forimg">
+            <img src="/static/ch3.jpg" alt="" height="250px">
+        </div>
+        <div class="ford">
+            <p><b>Nike SB Dunk Low TS</b></p>
+            <p> This design features a variety of textures and patterns, similar to those seen on the Air Force 1 Low
+                Travis Scott Cactus Jack. </p>
+            <p><b>MRP: ₹ 1,44,999.00</b></p>
+            <a href="/buy" class="btn btn-primary">Buy Product</a>
+        </div>
+    </div>
+    <div class="card2">
+        <div class="forimg">
+            <img src="/static/ch2.jpg" alt="" height="250px">
+        </div>
+        <div class="ford">
+            <p><b>Nike Air Max 270</b></p>
+            <p>
+                Nike's first lifestyle Air Max brings you style, comfort and big attitude in the Nike Air Max 270.
+            </p>
+            <p><b>MRP: ₹ 5,000.00</b></p>
+            <a href="/buy" class="btn btn-primary">Buy Product</a>
+        </div>
+    </div>
 
+    <!-- cards 3 -->
     <div class="container-fluid">
         <div class="responsive">
             <div class="gallery">

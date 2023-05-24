@@ -71,7 +71,7 @@ def buy(request):
 def mail(request):
     rname=request.POST.get('dname')
     sendermail=request.POST.get('demail')
-    otp=random.randint(0000,9999)
+    otp=random.randint(100000,999999)
     temp='Hello '+rname+'\nYour OTP is : '+str(otp)+'\nDO NOT share with any one'
     email=EmailMessage(
         'OTP for KICKS Order Confirmation',
@@ -108,4 +108,4 @@ def otpverify(request):
             return render(request,'delivery.html',context)
         else:
             query.delete()
-            return HttpResponse("You entered wrong Otp    Please go back to home  ")
+            return redirect("/home")

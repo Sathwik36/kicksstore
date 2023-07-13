@@ -132,7 +132,12 @@
         left: -5px;
         top: -5px;
     }
-
+    .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link.show {
+            color: var(--bs-navbar-active-color);
+            font-size: 18px;
+            text-decoration: underline;
+        }
     /* responsive */
     @media (max-width: 1080px) {
         .containerc {
@@ -203,18 +208,22 @@
         }
 
     }
+    .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: var(--bs-navbar-active-color);
+    font-size: 18px;
+}
 </style>
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg " style="background: rgb(108,208,255);">
+    <nav class="navbar navbar-expand-lg " style="background: #5e9ca0;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="/static/kickshome.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top"
                     style="border: 3px solid grey; border-radius: 20px;">
 
             </a>
-            <a class="navbar-brand" href="#">KICKS</a>
+            <a class="navbar-brand" href="#" style="font-family: 'Fira Sans', sans-serif; color: red;font-size: 22px;"><b><i>KICKS</i></b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">

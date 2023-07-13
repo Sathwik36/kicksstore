@@ -9,6 +9,13 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     <style>
+        
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link.show {
+            color: var(--bs-navbar-active-color);
+            font-size: 18px;
+            text-decoration: underline;
+        }
         div.gallery {
             background: white;
             border: 3px solid transparent;
@@ -60,14 +67,14 @@
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg " style="background: rgb(108,208,255);">
+    <nav class="navbar navbar-expand-lg " style="background: #5e9ca0;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="/static/kickshome.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top"
                     style="border: 3px solid grey; border-radius: 20px;">
 
             </a>
-            <a class="navbar-brand" href="#">KICKS</a>
+            <a class="navbar-brand" href="#" style="font-family: 'Fira Sans', sans-serif; color: red;font-size: 22px;"><b><i>KICKS</i></b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -76,7 +83,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/home">Home</a>
+                        <a class="nav-link " aria-current="page" href="/home">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

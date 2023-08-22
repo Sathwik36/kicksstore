@@ -42,61 +42,62 @@
 
 <body>
   <!-- navbar -->
-  <nav class="navbar navbar-expand-lg " style="background: #5e9ca0;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="/static/kickshome.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top"
-                style="border: 3px solid grey; border-radius: 20px;">
+  <nav class="navbar navbar-expand-lg " style="background: rgb(120,172,255);">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <img src="/static/kickshome.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top"
+                  style="border: 3px solid grey; border-radius: 20px;">
 
-        </a>
-        <a class="navbar-brand" href="#" style="font-family: 'Fira Sans', sans-serif; color: red;font-size: 22px;"><b><i>KICKS</i></b></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="/home">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Categories
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Jordans</a></li>
-                        <li><a class="dropdown-item" href="#">Dunks</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Off-Whites</a></li>
-                    </ul>
-                </li>
+          </a>
+          <a class="navbar-brand" href="#"
+              style="font-family: 'Fira Sans', sans-serif; color: red;font-size: 22px;"><b><i>KICKS</i></b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link " aria-current="page" href="/home">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          Categories
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Men</a></li>
+                          <li><a class="dropdown-item" href="#">Women</a></li>
+                          <li>
+                              <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item" href="#">Kids</a></li>
+                      </ul>
+                  </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/deals">Deals</a>
+                  <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="/deals">Deals</a>
 
-                </li>
-                <li class="nav-item">
-                    <span class="badge rounded-pill text-bg-danger">New</span>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/new">What's new</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/feedback">Feedback</a>
-                </li>
+                  </li>
+                  <li class="nav-item">
+                      <span class="badge rounded-pill text-bg-danger">New</span>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/new">What's new</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/feedback">Feedback</a>
+                  </li>
 
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-primary" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
-</nav>
+              </ul>
+              <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-primary" type="submit">Search</button>
+              </form>
+          </div>
+      </div>
+  </nav>
 
   <!-- form  -->
   {% if c == 0 %}
